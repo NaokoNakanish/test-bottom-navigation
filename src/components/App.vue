@@ -1,16 +1,22 @@
 <template>
   <Page>
-    <MDBottomNavigation selectedIndex="1">
+    <MDBottomNavigation class="ArticlesTabs__tabs" selectedIndex="1">
       <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
-      <MDTabStrip>
-        <MDTabStripItem>
-          <Label text="Home"></Label>
+      <MDTabStrip class="ArticlesTabs__tab-strip">
+        <MDTabStripItem class="ArticlesTabs__tab-strip-item">
+          <Label class="ArticlesTabs__tab-strip-item-text" text="Home"></Label>
         </MDTabStripItem>
-        <MDTabStripItem class="special">
-          <Label text="Account"></Label>
+        <MDTabStripItem class="ArticlesTabs__tab-strip-item">
+          <Label
+            class="ArticlesTabs__tab-strip-item-text"
+            text="Account"
+          ></Label>
         </MDTabStripItem>
-        <MDTabStripItem class="special">
-          <Label text="Search"></Label>
+        <MDTabStripItem class="ArticlesTabs__tab-strip-item">
+          <Label
+            class="ArticlesTabs__tab-strip-item-text"
+            text="Search"
+          ></Label>
         </MDTabStripItem>
       </MDTabStrip>
 
@@ -44,16 +50,29 @@ export default {
 };
 </script>
 
-<style scoped>
-ActionBar {
-  background-color: #53ba82;
-  color: #ffffff;
-}
-
-.message {
-  vertical-align: center;
-  text-align: center;
-  font-size: 20;
-  color: #333333;
+<style lang="scss">
+.ArticlesTabs {
+  &__tabs {
+    margin: 300 0 0;
+    // background-color: red;　// 全面にあたる
+  }
+  &__tab-strip {
+    // add since N8
+    highlight-color: green;
+    iostabbaritemsalignment: center;
+    // font-size: 20; // 効く
+    // text-transform: uppercase; // 効かない
+    // background-color: red; // 効かない
+  }
+  &__tab-strip-item {
+    // background-color: red; // 効くが、ハイライト以外の文字を塗りつぶす
+  }
+  &__tab-strip-item-text {
+    // background-color: red; // 効かない
+    // color: red; // 効くが、常に全てに効く、ハイライトの色にはならなくなる
+    letter-spacing: 10px; // 効かない
+    font-size: 20; // 効く
+    text-transform: uppercase; // 効く
+  }
 }
 </style>
