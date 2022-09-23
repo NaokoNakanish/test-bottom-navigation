@@ -9,6 +9,7 @@
     "id": "navigation-bottom-test"
   },
   "dependencies": {
+    "@nativescript-community/ui-material-bottom-navigation": "^7.0.28",
     "@nativescript/core": "~8.3.4",
     "@triniwiz/nativescript-socketio": "^5.0.1",
     "@triniwiz/nativescript-toasty": "^4.1.3",
