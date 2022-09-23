@@ -58,16 +58,19 @@ export default {
   }
   &__tab-strip {
     // add since N8
-    highlight-color: green;
+    highlight-color: green; // 効く
+    // color: blue; //  効くが、常に全てに効く、ハイライトの色にはならなくなる
     iostabbaritemsalignment: center;
     // font-size: 20; // 効く
     // text-transform: uppercase; // 効かない
     // background-color: red; // 効かない
   }
   &__tab-strip-item {
-    // background-color: red; // 効くが、ハイライト以外の文字を塗りつぶす
+    background-color: #161a21; // 効く。赤だとハイライト以外の文字を塗りつぶすが、グレーや黒だと塗りつぶさない（）
+    // highlight-color: green; // 効かない
   }
   &__tab-strip-item-text {
+    // highlight-color: green; // 効かない
     // background-color: red; // 効かない
     // color: red; // 効くが、常に全てに効く、ハイライトの色にはならなくなる
     letter-spacing: 10px; // 効かない

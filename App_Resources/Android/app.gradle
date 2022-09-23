@@ -11,10 +11,17 @@
 
 android {
   defaultConfig {
+    applicationId "navigation-bottom-test"
     minSdkVersion 17
+    targetSdkVersion 31 // 追加
     generatedDensities = []
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"
   }
+}
+
+ // 以下３行追加
+dependencies {
+  implementation 'com.android.support:multidex:1.0.3'
 }
