@@ -27,9 +27,10 @@
         </GridLayout>
       </MDTabContentItem>
       <MDTabContentItem>
-        <GridLayout>
-          <Label text="Account Page" class="h2 text-center"></Label>
-        </GridLayout>
+        <StackLayout>
+          <Label :text="msg_before" class="h1 text-center"></Label>
+          <Label :text="msg_after" class="h1 text-center"></Label>
+        </StackLayout>
       </MDTabContentItem>
       <MDTabContentItem>
         <GridLayout>
@@ -44,8 +45,19 @@
 export default {
   data() {
     return {
-      msg: "Hello World!",
+      msg_before: "Hello World!",
+      msg_after: "Hello World!",
     };
+  },
+  mounted() {
+    const appSettings = require("@nativescript/core/application-settings");
+    this.hits = appSettings.getNumber("hits");
+    console.log("this.hits:", this.hits);
+    if (!this.hits) this.hits = 0;
+    this.msg_before = this.hits;
+    appSettings.setNumber("hits", ++this.hits);
+    console.log("this.hits", this.hits);
+    this.msg_after = this.hits;
   },
 };
 </script>
