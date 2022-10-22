@@ -51,11 +51,11 @@ export default {
   },
   mounted() {
     const appSettings = require("@nativescript/core/application-settings");
-    this.hits = appSettings.getNumber("hits");
+    this.hits = appSettings.getString("hits");
     console.log("this.hits:", this.hits);
-    if (!this.hits) this.hits = 0;
+    if (!this.hits) this.hits = "hello";
     this.msg_before = this.hits;
-    appSettings.setNumber("hits", ++this.hits);
+    appSettings.setString("hits", "hellohello");
     console.log("this.hits", this.hits);
     this.msg_after = this.hits;
   },
