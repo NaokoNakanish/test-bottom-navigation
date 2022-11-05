@@ -27,10 +27,13 @@
         </GridLayout>
       </MDTabContentItem>
       <MDTabContentItem>
-        <StackLayout>
+        <WebView
+          src="https://blog.nativescript.org/client-side-storage-in-nativescript-applications/"
+        />
+        <!-- <StackLayout>
           <Label :text="msg_before" class="h1 text-center"></Label>
           <Label :text="msg_after" class="h1 text-center"></Label>
-        </StackLayout>
+        </StackLayout> -->
       </MDTabContentItem>
       <MDTabContentItem>
         <GridLayout>
